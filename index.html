@@ -108,11 +108,7 @@
       <div class="daily-content">
         <div class="learning-content">
           <form class="learning-form">
-            <input
-              type="text"
-              class="learning-input"
-              placeholder="What did you learn today Paul?"
-            />
+            <input type="text" class="learning-input" placeholder="What did you learn today Paul?"/>
             <button class="learning-button" type="button">
               <svg
                 width="16"
@@ -139,7 +135,7 @@
         </div>
         <!-- Inicio de publicación simple -->
         <div class="public">
-          <button class="public-button">
+          <button class="public-button" id="my-modal">
             <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
           </button>
           <div class="public-date">
@@ -569,5 +565,23 @@
         <div class="footer">Bootcamp X © 2022</div>
       </div>
     </main>
+    <div class="modal">
+      <div class="modal-container">
+        <div class="buttom-x">
+          <button>
+            <img src="/assets/modal/x.png" alt="boton-x">
+          </button>
+        </div>
+        <div class="content-modal">
+          <div class="content-modal-2">
+            <h2>Are you sure you want to delete it?</h2>
+            <div class="botoms-2x">
+              <a href="">Cancel</a>
+              <a href="">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
