@@ -1,8 +1,9 @@
 // buttons action publication
 let buttons_actions = document.querySelectorAll(".public-button");
 let buttons_deletes = document.querySelectorAll(".button-delete");
-let modal=document.getElementById("modal-2")
-let span = document.getElementsByClassName("close")[0];
+let modal = document.getElementById("modal-2");
+let span = document.querySelectorAll(".close");
+let card_post;
 buttons_actions.forEach((button) => {
   button.addEventListener("click", function name(params) {
     let button_delete =
@@ -15,10 +16,14 @@ buttons_actions.forEach((button) => {
 
 buttons_deletes.forEach((button) => {
   button.addEventListener("click", function name(params) {
-    modal.classList.remove('visibility-hidden');
+    modal.classList.remove("visibility-hidden");
+    card_post = params.currentTarget.parentNode.parentNode.parentNode;
+    // modal.querySelector("");
   });
 });
 
-span.onclick = function() {
-  modal.classList.add("visibility-hidden");
-}
+span.forEach((_tag) => {
+  _tag.addEventListener("click", function () {
+    modal.classList.add("visibility-hidden");
+  });
+});
