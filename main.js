@@ -2,7 +2,7 @@
 let buttons_actions = document.querySelectorAll(".public-button");
 let buttons_deletes = document.querySelectorAll(".button-delete");
 let modal = document.getElementById("modal-2");
-let span = document.querySelectorAll(".close");
+let close_buttons = document.querySelectorAll(".close");
 let card_post;
 buttons_actions.forEach((button) => {
   button.addEventListener("click", function name(params) {
@@ -18,12 +18,22 @@ buttons_deletes.forEach((button) => {
   button.addEventListener("click", function name(params) {
     modal.classList.remove("visibility-hidden");
     card_post = params.currentTarget.parentNode.parentNode.parentNode;
-    // modal.querySelector("");
+  });
+
+  document
+    .getElementById("delete-post-button")
+    .addEventListener("click", function deletePost(params) {
+      dissaperModal();
+      card_post.style.display = "none";
+    });
+});
+
+close_buttons.forEach((_tag) => {
+  _tag.addEventListener("click", function () {
+    dissaperModal();
   });
 });
 
-span.forEach((_tag) => {
-  _tag.addEventListener("click", function () {
-    modal.classList.add("visibility-hidden");
-  });
-});
+function dissaperModal() {
+  modal.classList.add("visibility-hidden");
+}
