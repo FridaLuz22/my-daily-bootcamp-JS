@@ -1,49 +1,48 @@
 @import url("./reset.css");
 
-.modal{
+.modal {
   position: fixed;
   z-index: 1000;
   width: 100%;
   height: 100vh;
   top: 0;
   background-color: rgb(32, 55, 88);
-  background-color: rgba(32, 55, 88,0.7);
+  background-color: rgba(32, 55, 88, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.buttom-x{
+.buttom-x {
   display: flex;
   justify-content: right;
 }
 
-.buttom-x span{
-  color:white;
+.buttom-x span {
+  color: white;
   font-size: 40px;
   cursor: pointer;
   align-items: center;
-  padding: 0 12px ;
+  padding: 0 12px;
 }
 
-.buttom-x span:hover{
+.buttom-x span:hover {
   background-color: rgba(255, 255, 255, 0.12);
   border-radius: 8px;
 }
 
-.content-modal{
-  background-color:white;
+.content-modal {
+  background-color: white;
   width: 307px;
-  Height: 167px;
+  height: 167px;
   border-radius: 8px;
   margin-top: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-.content-modal h2{
+.content-modal h2 {
   font-family: "Montserrat";
   font-size: 17px;
   font-style: normal;
@@ -52,32 +51,30 @@
   text-align: center;
 }
 
-.botoms-2x{
+.botoms-2x {
   display: flex;
   gap: 16px;
-  margin-top:24px ;
-  
+  margin-top: 24px;
 }
 
-.botoms-2x a{
+.botoms-2x a {
   text-decoration: none;
   color: #203758;
   font-size: 13px;
   font-weight: bold;
   padding: 12px 35px;
-  
 }
-.content-modal-2{
+.content-modal-2 {
   height: 107px;
   width: 80%;
 }
 
-.botoms-2x a:hover{
-  background-color: #F0F7FF;
-  color: #1877F2;
+.botoms-2x a:hover {
+  background-color: #f0f7ff;
+  color: #1877f2;
   border-radius: 6px;
 }
 
-.margin-zero-auto{
+.margin-zero-auto {
   margin: 0 auto;
 }
