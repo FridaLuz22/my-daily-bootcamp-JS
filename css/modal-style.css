@@ -23,14 +23,15 @@
   justify-content: right;
 }
 
-.buttom-x button {
-  background-color: transparent;
-  border: none;
+.buttom-x span{
+  color:white;
+  font-size: 40px;
   cursor: pointer;
-  
+  align-items: center;
+  padding: 0 12px ;
 }
 
-.buttom-x button:hover{
+.buttom-x span:hover{
   background-color: rgba(255, 255, 255, 0.12);
   border-radius: 8px;
 }
