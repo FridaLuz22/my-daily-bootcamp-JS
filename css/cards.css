@@ -120,7 +120,6 @@
   border-radius: 8px;
   border-color: transparent;
   box-shadow: -2px 2px 8px rgb(0 0 0 / 8%), 2px 2px 8px rgb(0 0 0 / 8%);
-  visibility: hidden;
 }
 
 .button-delete:hover {
@@ -129,4 +128,8 @@
 
 .button-delete img {
   padding: 6px;
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }
