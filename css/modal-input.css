@@ -162,7 +162,7 @@
   justify-content: center;
   transition: .5s;
   cursor: pointer;
-  border: none;
+  border: none; 
 }
 
 .uploaded-image figure:hover .delete-image{

@@ -6,6 +6,26 @@ let close_buttons = [];
 let button_delete_post;
 let card_post;
 let post_container = document.querySelector(".posts-container");
+let form_input=document.querySelector(".learning-form");
+let modal_input=document.getElementById("modal-input-2");
+let close_input=document.querySelectorAll(".close-input")[0];
+let location_input=document.getElementsByClassName("location-modal");
+
+function addLocation(){
+  location_input.style.display="none";
+}
+function addModalInput(){
+  form_input.addEventListener("click",(e)=>{
+    modal_input.classList.remove("visibility-hidden");
+  })
+}
+
+function addBotomsInput(){
+  close_input.addEventListener("click", (e)=>{
+    modal_input.classList.add("visibility-hidden");
+  })
+}
+
 
 function getModalElements() {
   modal = document.getElementById("modal-2");
@@ -65,8 +85,12 @@ function assingActionsToPostsButtons() {
   addEventToggleButtonDeleteToButtonsAction();
   addEventShowModalToButtonsDeletes();
   addEventCloseModalToButtonsCloses();
-}
+  addLocation();
+  addModalInput();
+  addBotomsInput();
+  
 
+}
 function init() {
   getModalElements();
   getButtonsPosts();
