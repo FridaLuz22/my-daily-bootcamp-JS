@@ -3,15 +3,38 @@ let buttonsActionsPost;
 let buttonsDeletePost;
 let modalDeletePost;
 let modalAddPost;
-let closeModalDeletePostButttons = [];
+let textareaModalPost;
+let butttonPublishPost;
+let buttonLocationPost;
+let buttonImagesPost;
+let imagesContainerPost;
+let inputPost;
+let closeModalDeletePostButttons;
 let buttonDeletePost;
 let cardPost;
 let postsContainer = document.querySelector(".posts-container");
+const classVisibilityHidden = "visibility-hidden";
 
 function getElementsModalDeletePost() {
   modalDeletePost = document.getElementById("modal-delete-post");
   closeModalDeletePostButttons = document.querySelectorAll(".close");
-  buttonDeletePost = document.getElementById("delete-post-button");
+  buttonDeletePost = document.querySelector("delete-post-button");
+  buttonLocationPost = document.querySelector(".span-location");
+  buttonImagesPost = document.querySelector(".span-upload-image");
+  imagesContainerPost = document.querySelector("uploaded-image");
+}
+
+function getElementModalAddPost() {
+  inputPost = document.querySelector(".learning-input");
+  modalAddPost = document.querySelector(".modal-add-post");
+  textareaModalPost = document.querySelector(".textarea-modal-add-post");
+  butttonPublishPost = document.querySelector(".publish-modal");
+}
+
+function addEventClickInputPost(params) {
+  inputPost.addEventListener("click", function showModalAddPost() {
+    modalAddPost.classList.remove();
+  });
 }
 
 function getButtonsPosts() {
@@ -24,11 +47,11 @@ function addEventToggleButtonDeleteToButtonsAction() {
     button.addEventListener(
       "click",
       function showAndHiddenButtonDelete(params) {
-        let button_delete =
+        let buttonDelete =
           params.currentTarget.parentNode.querySelector(".button-delete");
-        if (button_delete.classList.contains("visibility-hidden")) {
-          button_delete.classList.remove("visibility-hidden");
-        } else button_delete.classList.add("visibility-hidden");
+        if (buttonDelete.classList.contains(classVisibilityHidden)) {
+          buttonDelete.classList.remove(classVisibilityHidden);
+        } else buttonDelete.classList.add(classVisibilityHidden);
       }
     );
   });
@@ -37,7 +60,7 @@ function addEventToggleButtonDeleteToButtonsAction() {
 function addEventShowModalToButtonsDeletes() {
   buttonsDeletePost.forEach((button) => {
     button.addEventListener("click", function deletePost(params) {
-      modalDeletePost.classList.remove("visibility-hidden");
+      modalDeletePost.classList.remove(classVisibilityHidden);
       cardPost = params.currentTarget.parentNode.parentNode.parentNode;
     });
   });
@@ -45,7 +68,7 @@ function addEventShowModalToButtonsDeletes() {
 
 function addEventDeletePostToButtonModal() {
   buttonDeletePost.addEventListener("click", function showModal(params) {
-    modalDeletePost.classList.add("visibility-hidden");
+    modalDeletePost.classList.add(classVisibilityHidden);
     cardPost.style.display = "none";
   });
 }
@@ -59,7 +82,7 @@ function addEventCloseModalToButtonsCloses() {
 }
 
 function dissaperModal() {
-  modalDeletePost.classList.add("visibility-hidden");
+  modalDeletePost.classList.add(classVisibilityHidden);
 }
 
 function assingActionsToPostsButtons() {
