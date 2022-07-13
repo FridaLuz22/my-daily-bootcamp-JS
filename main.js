@@ -1,10 +1,17 @@
 // buttons action publication
 let buttons_actions;
 let buttons_deletes;
-let modal = document.getElementById("modal-2");
-let close_buttons = document.querySelectorAll(".close");
+let modal;
+let close_buttons = [];
+let button_delete_post;
 let card_post;
 let post_container = document.querySelector(".posts-container");
+
+function getModalElements() {
+  modal = document.getElementById("modal-2");
+  close_buttons = document.querySelectorAll(".close");
+  button_delete_post = document.getElementById("delete-post-button");
+}
 
 function getButtonsPosts() {
   buttons_actions = document.querySelectorAll(".public-button");
@@ -27,20 +34,18 @@ function addEventToggleButtonDeleteToButtonsAction() {
 }
 
 function addEventShowModalToButtonsDeletes() {
-  button.addEventListener("click", function showModal(params) {
-    modal.classList.remove("visibility-hidden");
-    card_post = params.currentTarget.parentNode.parentNode.parentNode;
+  buttons_deletes.forEach((button) => {
+    button.addEventListener("click", function deletePost(params) {
+      modal.classList.remove("visibility-hidden");
+      card_post = params.currentTarget.parentNode.parentNode.parentNode;
+    });
   });
 }
 
 function addEventDeletePostToButtonModal() {
-  buttons_deletes.forEach((button) => {
-    document
-      .getElementById("delete-post-button")
-      .addEventListener("click", function deletePost(params) {
-        dissaperModal();
-        card_post.style.display = "none";
-      });
+  button_delete_post.addEventListener("click", function showModal(params) {
+    modal.classList.add("visibility-hidden");
+    card_post.style.display = "none";
   });
 }
 
@@ -63,6 +68,7 @@ function assingActionsToPostsButtons() {
 }
 
 function init() {
+  getModalElements();
   getButtonsPosts();
   assingActionsToPostsButtons();
   addEventDeletePostToButtonModal();
