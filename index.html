@@ -589,13 +589,13 @@
         <div class="footer">Bootcamp X © 2022</div>
       </div>
     </main>
-    <div class="modal visibility-hidden" id="modal-2">
+    <div class="modal visibility-hidden" id="modal-delete-post">
       <div class="modal-container">
         <div class="buttom-x">
           <span class="close">&times;</span>
         </div>
         <div class="content-modal">
-          <div class="content-modal-2">
+          <div class="content-modal-delete-post">
             <h2>Are you sure you want to delete it?</h2>
             <div class="botoms-2x">
               <button class = "close" href="javascript:void(0);">Cancel</button>
@@ -606,16 +606,16 @@
       </div>
     </div>
     <!-- Modal de Input -->
-    <div class="modal-input visibility-hidden" id="modal-input-2">
+    <div class="modal-input visibility-hidden" id="modal-add-post">
       <div class="modal-container-input">
         <div class="buttom-input-x">
-          <span class="close-input">&times;</span>
+          <span class="close-input" onclick="toggleShowAndCloseModalAddPost()">&times;</span>
         </div>
         <div class="content-modal-input">
           <div class="cont-input">
             <h2>What did you learn today Paul?</h2>
             <div class="input-today">
-              <textarea name="text" id="textarea" cols="20" rows="5" maxlength="140" placeholder="Today I Learnd...."></textarea>
+              <textarea name="text" class="textarea-modal-add-post" cols="20" rows="5" maxlength="140" placeholder="Today I Learnd...."></textarea>
             </div>
             <!-- location -->
             <div class="location-modal">
@@ -637,7 +637,7 @@
                   <img src="./assets/modal/location-modal.png" alt="upload-image">
                 </button>
               </div>
-              <button class="publish-modal">Publish</button>
+              <button class="publish-post">Publish</button>
             </div>
           </div>
         </div>
