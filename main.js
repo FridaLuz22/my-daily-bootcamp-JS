@@ -7,6 +7,7 @@ let textareaModalPost;
 let butttonPublishPost;
 let buttonLocationPost;
 let buttonImagesPost;
+let buttonCloseModalAddPost;
 let imagesContainerPost;
 let inputPost;
 let closeModalDeletePostButttons;
@@ -21,26 +22,37 @@ function getElementsModalDeletePost() {
   buttonDeletePost = document.getElementById("delete-post-button");
 }
 
-function getElementModalAddPost() {
+function getElementsModalAddPost() {
   inputPost = document.querySelector(".learning-input");
   modalAddPost = document.getElementById("modal-add-post");
   textareaModalPost = document.querySelector(".textarea-modal-add-post");
   butttonPublishPost = document.querySelector(".publish-modal");
   buttonLocationPost = document.querySelector(".span-location");
   buttonImagesPost = document.querySelector(".span-upload-image");
-  imagesContainerPost = document.querySelector("uploaded-image");
+  imagesContainerPost = document.querySelector(".uploaded-image");
+  buttonCloseModalAddPost = document.querySelector(".close-input");
+}
+
+function addEventsElementModalAddPost() {
+  addEventClickInputPost();
+  addEventClickCloseModalAddPost();
 }
 
 function addEventClickInputPost() {
-  inputPost.addEventListener("click", function showModalAddPost() {
-    toggleShowAndCloseModalAddPost();
-  });
+  inputPost.addEventListener("click", toggleShowAndCloseModalAddPost);
 }
 
 function toggleShowAndCloseModalAddPost() {
   if (modalAddPost.classList.contains(classVisibilityHidden)) {
     modalAddPost.classList.remove(classVisibilityHidden);
   } else modalAddPost.classList.add(classVisibilityHidden);
+}
+
+function addEventClickCloseModalAddPost() {
+  buttonCloseModalAddPost.addEventListener(
+    "click",
+    toggleShowAndCloseModalAddPost
+  );
 }
 
 function getButtonsPosts() {
@@ -81,9 +93,7 @@ function addEventDeletePostToButtonModal() {
 
 function addEventCloseModalToButtonsCloses() {
   closeModalDeletePostButttons.forEach((_tag) => {
-    _tag.addEventListener("click", function eventDissaperModal() {
-      dissaperModal();
-    });
+    _tag.addEventListener("click", dissaperModal);
   });
 }
 
@@ -102,8 +112,8 @@ function init() {
   getButtonsPosts();
   assingActionsToPostsButtons();
   addEventDeletePostToButtonModal();
-  getElementModalAddPost();
-  addEventClickInputPost();
+  getElementsModalAddPost();
+  addEventsElementModalAddPost();
 }
 
 init();
