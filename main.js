@@ -18,12 +18,12 @@ const classVisibilityHidden = "visibility-hidden";
 function getElementsModalDeletePost() {
   modalDeletePost = document.getElementById("modal-delete-post");
   closeModalDeletePostButttons = document.querySelectorAll(".close");
-  buttonDeletePost = document.querySelector("delete-post-button");
+  buttonDeletePost = document.getElementById("delete-post-button");
 }
 
 function getElementModalAddPost() {
   inputPost = document.querySelector(".learning-input");
-  modalAddPost = document.querySelector(".modal-add-post");
+  modalAddPost = document.getElementById("modal-add-post");
   textareaModalPost = document.querySelector(".textarea-modal-add-post");
   butttonPublishPost = document.querySelector(".publish-modal");
   buttonLocationPost = document.querySelector(".span-location");
@@ -31,10 +31,16 @@ function getElementModalAddPost() {
   imagesContainerPost = document.querySelector("uploaded-image");
 }
 
-function addEventClickInputPost(params) {
+function addEventClickInputPost() {
   inputPost.addEventListener("click", function showModalAddPost() {
-    modalAddPost.classList.remove();
+    toggleShowAndCloseModalAddPost();
   });
+}
+
+function toggleShowAndCloseModalAddPost() {
+  if (modalAddPost.classList.contains(classVisibilityHidden)) {
+    modalAddPost.classList.remove(classVisibilityHidden);
+  } else modalAddPost.classList.add(classVisibilityHidden);
 }
 
 function getButtonsPosts() {
@@ -67,7 +73,7 @@ function addEventShowModalToButtonsDeletes() {
 }
 
 function addEventDeletePostToButtonModal() {
-  buttonDeletePost.addEventListener("click", function showModal(params) {
+  buttonDeletePost.addEventListener("click", function showModal() {
     modalDeletePost.classList.add(classVisibilityHidden);
     cardPost.style.display = "none";
   });
@@ -96,6 +102,8 @@ function init() {
   getButtonsPosts();
   assingActionsToPostsButtons();
   addEventDeletePostToButtonModal();
+  getElementModalAddPost();
+  addEventClickInputPost();
 }
 
 init();

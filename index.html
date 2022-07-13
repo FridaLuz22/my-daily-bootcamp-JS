@@ -606,10 +606,10 @@
       </div>
     </div>
     <!-- Modal de Input -->
-    <div class="modal-input" id="modal-add-post">
+    <div class="modal-input visibility-hidden" id="modal-add-post">
       <div class="modal-container-input">
         <div class="buttom-input-x">
-          <span class="close-input">&times;</span>
+          <span class="close-input" onclick="toggleShowAndCloseModalAddPost()">&times;</span>
         </div>
         <div class="content-modal-input">
           <div class="cont-input">
@@ -637,7 +637,7 @@
                   <img src="./assets/modal/location-modal.png" alt="upload-image">
                 </button>
               </div>
-              <button class="publish-modal">Publish</button>
+              <button class="publish-post">Publish</button>
             </div>
           </div>
         </div>
