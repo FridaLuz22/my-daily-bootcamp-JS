@@ -19,9 +19,6 @@ function getElementsModalDeletePost() {
   modalDeletePost = document.getElementById("modal-delete-post");
   closeModalDeletePostButttons = document.querySelectorAll(".close");
   buttonDeletePost = document.querySelector("delete-post-button");
-  buttonLocationPost = document.querySelector(".span-location");
-  buttonImagesPost = document.querySelector(".span-upload-image");
-  imagesContainerPost = document.querySelector("uploaded-image");
 }
 
 function getElementModalAddPost() {
@@ -29,6 +26,9 @@ function getElementModalAddPost() {
   modalAddPost = document.querySelector(".modal-add-post");
   textareaModalPost = document.querySelector(".textarea-modal-add-post");
   butttonPublishPost = document.querySelector(".publish-modal");
+  buttonLocationPost = document.querySelector(".span-location");
+  buttonImagesPost = document.querySelector(".span-upload-image");
+  imagesContainerPost = document.querySelector("uploaded-image");
 }
 
 function addEventClickInputPost(params) {
