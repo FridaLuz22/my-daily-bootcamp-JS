@@ -31,25 +31,28 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0;
+  padding: 8px;
   background-color: white;
   width: 40px;
   border: none;
   margin-top: 5px;
   margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.public-button img {
+.public-button svg {
   width: 18px;
+}
+.public-button svg:hover ellipse{
+  fill:  #1877f2;
 }
 
 .public-button:hover {
-  background-color: white;
+  background-color: #F0F7FF;
   cursor: pointer;
-}
-
-.public-button img:hover {
-  cursor: pointer;
+  border-radius: 50px;
 }
 
 .date-conte {
