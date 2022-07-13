@@ -57,22 +57,24 @@
   margin-top: 24px;
 }
 
-.botoms-2x a {
+.botoms-2x button {
   text-decoration: none;
   color: #203758;
   font-size: 13px;
   font-weight: bold;
   padding: 12px 35px;
+  border: none;
 }
 .content-modal-2 {
   height: 107px;
   width: 80%;
 }
 
-.botoms-2x a:hover {
+.botoms-2x button:hover {
   background-color: #f0f7ff;
   color: #1877f2;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .margin-zero-auto {
