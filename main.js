@@ -17,6 +17,34 @@ let buttonDeletePost;
 let cardPost;
 let postsContainer = document.querySelector(".posts-container");
 const classVisibilityHidden = "visibility-hidden";
+const dateCardPost = `<div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>`;
+const actionsCardPost = `<div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
+              </div>`;
 
 function getElementsModalDeletePost() {
   modalDeletePost = document.getElementById("modal-delete-post");
@@ -153,3 +181,65 @@ function init() {
 }
 
 init();
+
+function insertNewPost(
+  idCardPost,
+  headerCardPost,
+  textCardPost,
+  imagesContainerPost
+) {
+  let newCardPost = document.createElement("div");
+  newCardPost.classList.add("public");
+
+  newCardPost.appendChild(idCardPost);
+  newCardPost.appendChild(headerCardPost);
+  newCardPost.appendChild(textCardPost);
+  newCardPost.appendChild(imagesContainerPost);
+  postsContainer.prepend(newCardPost);
+}
+
+function getInputIdCard(id) {
+  let idCardPost = document.createElement("input");
+  idCardPost.setAttribute("type", "hidden");
+  idCardPost.setAttribute("value", id);
+  return idCardPost;
+}
+
+function constructNewPost(data) {
+  let headerCardPost = document.createElement("div");
+  let textCardPost = document.createElement("div");
+  let imagesContainerCardPost = document.createElement("div");
+  imagesContainerCardPost.classList.add("images");
+  let idCardPost = getInputIdCard(data.id);
+  textCardPost.classList.add("text");
+  headerCardPost.classList.add("public-header");
+  headerCardPost.innerHTML = dateCardPost + actionsCardPost;
+  textCardPost.innerHTML = "<p>" + data.description + "</p>";
+  imagesContainerCardPost.innerHTML = insertImagesPost(data.images);
+  console.log(imagesContainerCardPost);
+  insertNewPost(
+    idCardPost,
+    headerCardPost,
+    textCardPost,
+    imagesContainerCardPost
+  );
+}
+
+function insertImagesPost(images) {
+  let imagesContainer = document.createElement("div");
+  let imageCardPost;
+  images.forEach((img) => {
+    imageCardPost = document.createElement("img");
+    imageCardPost.setAttribute("src", img);
+    imageCardPost.setAttribute("alt", "imagePost");
+    imagesContainer.append(imageCardPost);
+  });
+  return imagesContainer.innerHTML;
+}
+
+// let post = {
+//   id: 0,
+//   description: "Hola esta es una nueva publicacion.",
+//   images: ["assets/feed/cake.jpg"],
+//   state: 1,
+// };
