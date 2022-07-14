@@ -14,6 +14,7 @@ let inputPost;
 let closeModalDeletePostButttons;
 let buttonDeletePost;
 let cardPost;
+let imagesArr = [];
 let postsContainer = document.querySelector(".posts-container");
 const classVisibilityHidden = "visibility-hidden";
 const dateCardPost = `<div class="public-date">
@@ -68,10 +69,24 @@ function verifyData() {
     document.querySelector(".warning").style.display = "flex";
     return false;
   }
+  return true;
 }
 
 function publishNewPost() {
-  if (verifyData()) console.log("aniadir");
+  if (verifyData()) {
+    let objectPost = {};
+    objectPost.id = 0;
+    objectPost.description = textareaModalPost.value;
+    objectPost.images = imagesArr;
+    objectPost.state = 1;
+    console.log(objectPost);
+    constructNewPost(objectPost);
+    textareaModalPost.value = "";
+    toggleShowAndCloseModalAddPost();
+    let file = document.getElementById("upload-files");
+    file.files = [];
+    imagesContainerPost.innerHTML = "";
+  }
 }
 
 function addEventsElementModalAddPost() {
@@ -83,44 +98,48 @@ function addEventsElementModalAddPost() {
 }
 // image-uploaded
 function addEventUploadFileInputModalAddPost() {
-  'use strict'
-  let file = document.getElementById('upload-files');
-  let formData = new FormData(); 
+  "use strict";
+  let file = document.getElementById("upload-files");
+  let formData = new FormData();
   console.log(file);
-  file.addEventListener('change', function(elemento){
-      for(let i = 0 ; i < file.files.length ; i++){
-          let miniature_id = Math.floor(Math.random()*30000) + '_' + Date.now();
-          console.log("dentro del for")
-          createMiniature(file,i,miniature_id);
-          formData.append(miniature_id,file.files[i]);
-          console.log(formData.getElementById);
-      }
-      elemento.target.value = '';
+  file.addEventListener("change", function (elemento) {
+    for (let i = 0; i < file.files.length; i++) {
+      let miniature_id = Math.floor(Math.random() * 30000) + "_" + Date.now();
+      console.log("dentro del for");
+      createMiniature(file, i, miniature_id);
+      formData.append(miniature_id, file.files[i]);
+      console.log(formData.getElementById);
+    }
+    elemento.target.value = "";
   });
 
-  let createMiniature = function (file,iterator, miniature_id) {
-      let miniature = document.createElement('div');
-      miniature.classList.add('miniature',miniature_id);
-      miniature.dataset.id = miniature_id;
-      miniature.setAttribute('style',`background-image: url(${ URL.createObjectURL( file.files[iterator] ) })`);
-      document.querySelector('.uploaded-image').appendChild(miniature);
-      createCloseButton(miniature_id);
-  }
+  let createMiniature = function (file, iterator, miniature_id) {
+    let miniature = document.createElement("div");
+    miniature.classList.add("miniature", miniature_id);
+    miniature.dataset.id = miniature_id;
+    miniature.setAttribute(
+      "style",
+      `background-image: url(${URL.createObjectURL(file.files[iterator])})`
+    );
+    imagesArr.push(URL.createObjectURL(file.files[iterator]));
+    document.querySelector(".uploaded-image").appendChild(miniature);
+    createCloseButton(miniature_id);
+  };
 
-  let createCloseButton = function(miniature_id) {
-      console.log("se creo close buton");
-      let closeButton = document.createElement('div');
-      closeButton.classList.add('close-miniature');
-      closeButton.innerText = 'DETELE';
-      document.getElementsByClassName(miniature_id)[0].appendChild(closeButton);
-  }
+  let createCloseButton = function (miniature_id) {
+    console.log("se creo close buton");
+    let closeButton = document.createElement("div");
+    closeButton.classList.add("close-miniature");
+    closeButton.innerText = "DETELE";
+    document.getElementsByClassName(miniature_id)[0].appendChild(closeButton);
+  };
 
-  document.body.addEventListener('click',function(elemento){
-      if(elemento.target.classList.contains('close-miniature')){
-          elemento.target.parentNode.remove();
-          formData.delete(elemento.target.parentNode.dataset.id);
-      }
-  } )
+  document.body.addEventListener("click", function (elemento) {
+    if (elemento.target.classList.contains("close-miniature")) {
+      elemento.target.parentNode.remove();
+      formData.delete(elemento.target.parentNode.dataset.id);
+    }
+  });
 }
 // end image-uploaded
 function addEventClickInputPost() {
@@ -200,7 +219,6 @@ function assingActionsToPostsButtons() {
   addEventToggleButtonDeleteToButtonsAction();
   addEventShowModalToButtonsDeletes();
   addEventCloseModalToButtonsCloses();
-
 }
 function init() {
   getElementsModalDeletePost();
