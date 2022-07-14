@@ -8,7 +8,6 @@ let buttonPublishPost;
 let buttonLocationPost;
 let buttonImagesPost;
 let buttonCloseModalAddPost;
-let inputFileImageModalAddPost;
 let imagesContainerPost;
 let spanLocationAddPost;
 let inputPost;
