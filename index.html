@@ -108,11 +108,7 @@
       <div class="daily-content">
         <div class="learning-content">
           <form class="learning-form">
-            <input
-              type="text"
-              class="learning-input"
-              placeholder="What did you learn today Paul?"
-            />
+            <input type="text" class="learning-input" placeholder="What did you learn today Paul?"/>
             <button class="learning-button" type="button">
               <svg
                 width="16"
@@ -137,276 +133,342 @@
             </button>
           </form>
         </div>
-        <!-- Inicio de publicación simple -->
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a
-                class="link-public"
-                href="https://twitter.com/yummta?lang=es"
-                target="_blank"
-              >
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Foto de perfil del usuario"
-                />
-              </a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                  ><h3>Paul Portillo</h3></a
-                >
-                <p>04 de Julio, 2022</p>
+        <div class="posts-container">
+          <!-- Inicio de publicación simple -->
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+          </div>
+          <!-- Fin de publicación simple -->
+          <!-- Inicio de publicación compuesta con 3 imagenes-->
+          <div class="public">
+            <input type="hidden" name="id" value="0">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-3.jpg" alt="cups de postres" />
+              <div class="sub-img">
+                <img src="assets/feed/cake.jpg" alt="cuk postre" />
+                <img src="assets/feed/cake-3.jpg" alt="keke postre" />
               </div>
             </div>
           </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
-          </div>
-        </div>
-        <!-- Fin de publicación simple -->
-        <!-- Inicio de publicación compuesta con 3 imagenes-->
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a class="link-public" href="#">
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Paul Portillo"
-                />
-              </a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                >
-                  <h3>Paul Portillo</h3>
-                </a>
-                <p>04 de Julio, 2022</p>
+          <!-- Fin de publicación compuesta con 3 imagenes -->
+          <!-- Inicio de publicación compuesta con dos imagenes -->
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
               </div>
             </div>
-          </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
-          </div>
-          <div class="images">
-            <img src="assets/feed/cups-3.jpg" alt="cups de postres" />
-            <div class="sub-img">
-              <img src="assets/feed/cake.jpg" alt="cuk postre" />
-              <img src="assets/feed/cake-3.jpg" alt="keke postre" />
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-2.jpg" alt="cups de postres" />
+              <img src="assets/feed/cake-2.jpg" alt="keke postre" />
             </div>
           </div>
-        </div>
-        <!-- Fin de publicación compuesta con 3 imagenes -->
-        <!-- Inicio de publicación compuesta con dos imagenes -->
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a
-                class="link-public"
-                href="https://twitter.com/yummta?lang=es"
-                target="_blank"
-              >
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Paul Portillo"
-                />
-              </a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                >
-                  <h3>Paul Portillo</h3>
-                </a>
-                <p>04 de Julio, 2022</p>
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
               </div>
             </div>
-          </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
-          </div>
-          <div class="images">
-            <img src="assets/feed/cups-2.jpg" alt="cups de postres" />
-            <img src="assets/feed/cake-2.jpg" alt="keke postre" />
-          </div>
-        </div>
-
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a
-                class="link-public"
-                href="https://twitter.com/yummta?lang=es"
-                target="_blank"
-              >
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Paul Portillo"
-              /></a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                >
-                  <h3>Paul Portillo</h3>
-                </a>
-                <p>04 de Julio, 2022</p>
-              </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
             </div>
           </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
-          </div>
-          <div class="images">
-            <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
-          </div>
-        </div>
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a
-                class="link-public"
-                href="https://twitter.com/yummta?lang=es"
-                target="_blank"
-              >
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Paul Portillo"
-              /></a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                >
-                  <h3>Paul Portillo</h3>
-                </a>
-                <p>04 de Julio, 2022</p>
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
               </div>
             </div>
-          </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
-          </div>
-          <div class="images">
-            <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
-          </div>
-        </div>
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a
-                class="link-public"
-                href="https://twitter.com/yummta?lang=es"
-                target="_blank"
-              >
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Paul Portillo"
-              /></a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                >
-                  <h3>Paul Portillo</h3>
-                </a>
-                <p>04 de Julio, 2022</p>
-              </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
             </div>
           </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
-          </div>
-          <div class="images">
-            <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
-          </div>
-        </div>
-        <div class="public">
-          <button class="public-button">
-            <img src="assets/icons/dots.svg" alt="Menú de Opciones" />
-          </button>
-          <div class="public-date">
-            <div class="date-conte">
-              <a
-                class="link-public"
-                href="https://twitter.com/yummta?lang=es"
-                target="_blank"
-              >
-                <img
-                  class="date-img"
-                  src="assets/profile.jpg"
-                  alt="Paul Portillo"
-              /></a>
-              <div class="date-text">
-                <a
-                  class="link-public"
-                  href="https://twitter.com/yummta?lang=es"
-                  target="_blank"
-                >
-                  <h3>Paul Portillo</h3>
-                </a>
-                <p>04 de Julio, 2022</p>
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
               </div>
             </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!asdasdasdad
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-1.jpg" alt="cups de postres" >
+            </div>
           </div>
-          <div class="text">
-            <p>
-              Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
-              cambios, hacer pull request y mergearlo!
-            </p>
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
+            </div>
           </div>
-          <div class="images">
-            <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
+          <div class="public">
+            <div class="public-header">
+              <div class="public-date">
+                <div class="date-conte">
+                  <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                    <img class="date-img" src="assets/profile.jpg" alt="Foto de perfil del usuario" />
+                  </a>
+                  <div class="date-text">
+                    <a class="link-public" href="https://twitter.com/yummta?lang=es" target="_blank">
+                      <h3>Paul Portillo</h3>
+                    </a>
+                    <p>04 de Julio, 2022</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttons-actions">
+                <button class="public-button">
+                  <svg width="19" height="5" viewBox="0 0 19 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.4">
+                      <ellipse cx="2.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="9.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                      <ellipse cx="16.5" cy="2.90721" rx="2" ry="2.08247" fill="#788292" />
+                    </g>
+                  </svg>
+                </button>
+                <button class="button-delete visibility-hidden">
+                  <img src="assets/icons/delete.svg" width="10.67px" height="12px">
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                Hoy aprendí a usar Git. Aprendi a crear un branch, commitear mis
+                cambios, hacer pull request y mergearlo!
+              </p>
+            </div>
+            <div class="images">
+              <img src="assets/feed/cups-1.jpg" alt="cups de postres" />
+            </div>
           </div>
         </div>
       </div>
@@ -569,5 +631,64 @@
         <div class="footer">Bootcamp X © 2022</div>
       </div>
     </main>
+    <div class="modal visibility-hidden" id="modal-delete-post">
+      <div class="modal-container">
+        <div class="buttom-x">
+          <span class="close">&times;</span>
+        </div>
+        <div class="content-modal">
+          <div class="content-modal-delete-post">
+            <h2>Are you sure you want to delete it?</h2>
+            <div class="botoms-2x">
+              <button class = "close" href="javascript:void(0);">Cancel</button>
+              <button id = "delete-post-button" href="javascript:void(0);">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Input -->
+    <div class="modal-input visibility-hidden" id="modal-add-post">
+      <div class="modal-container-input">
+        <div class="buttom-input-x">
+          <span class="close-input"">&times;</span>
+        </div>
+        <div class="content-modal-input">
+          <div class="cont-input">
+            <h2>What did you learn today Paul?</h2>
+            <div class="input-today">
+              <textarea name="text" class="textarea-modal-add-post" cols="20" rows="5" maxlength="140" placeholder="Today I Learnd...."></textarea>
+            </div>
+            <!-- location -->
+            <div class="location-modal">
+              <span>From: Tingo María, Peru</span>
+            </div>
+            <!-- end location -->
+
+            <!-- alert warning -->
+            <div class="warning">
+              <span>Really? Did not you learning anything? This field is required!</span>
+            </div>
+            <!-- end alert warning -->
+            <div class="buttoms-span">
+              <div class="span-img-location">
+                <div class="span-upload-image">
+                  <input type="file" id="upload-files" accept="image/*" multiple>
+                  <label for="upload-files"><img src="./assets/modal/upload-modal.png" alt="location"></label>                  
+                </div>
+                <button class="span-location">
+                  <img src="./assets/modal/location-modal.png" alt="upload-image">
+                </button>
+              </div>
+              <button class="publish-post">Publish</button>
+            </div>
+          </div>
+        </div>
+        <!-- upload image -->
+        <div class="uploaded-image"></div>
+        <!-- end upload image -->
+      </div>
+    </div> -->
+    <script src="main.js"></script>
   </body>
 </html>
