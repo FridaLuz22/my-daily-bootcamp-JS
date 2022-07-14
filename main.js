@@ -4,10 +4,13 @@ let buttonsDeletePost;
 let modalDeletePost;
 let modalAddPost;
 let textareaModalPost;
-let butttonPublishPost;
+let buttonPublishPost;
 let buttonLocationPost;
 let buttonImagesPost;
+let buttonCloseModalAddPost;
+let inputFileImageModalAddPost;
 let imagesContainerPost;
+let spanLocationAddPost;
 let inputPost;
 let closeModalDeletePostButttons;
 let buttonDeletePost;
@@ -21,26 +24,71 @@ function getElementsModalDeletePost() {
   buttonDeletePost = document.getElementById("delete-post-button");
 }
 
-function getElementModalAddPost() {
+function getElementsModalAddPost() {
   inputPost = document.querySelector(".learning-input");
   modalAddPost = document.getElementById("modal-add-post");
   textareaModalPost = document.querySelector(".textarea-modal-add-post");
-  butttonPublishPost = document.querySelector(".publish-modal");
+  buttonPublishPost = document.querySelector(".publish-post");
   buttonLocationPost = document.querySelector(".span-location");
   buttonImagesPost = document.querySelector(".span-upload-image");
-  imagesContainerPost = document.querySelector("uploaded-image");
+  imagesContainerPost = document.querySelector(".uploaded-image");
+  buttonCloseModalAddPost = document.querySelector(".close-input");
+  spanLocationAddPost = document.querySelector(".location-modal");
+  inputFileImageModalAddPost = document.getElementById("upload-files");
+}
+
+function verifyData() {
+  if (textareaModalPost.value.trim() == "") {
+    document.querySelector(".warning").style.display = "flex";
+    return false;
+  }
+}
+
+function publishNewPost() {
+  if (verifyData()) console.log("aniadir");
+}
+
+function addEventsElementModalAddPost() {
+  addEventClickInputPost();
+  addEventClickCloseModalAddPost();
+  addEventClickPublishModalAddPost();
+  buttonLocationPost.addEventListener("click", toggleLocationModalAddPost);
+  addEventUploadFileInputModalAddPost();
+}
+
+function addEventUploadFileInputModalAddPost() {
+  console.log(inputFileImageModalAddPost.files);
+  inputFileImageModalAddPost.onchange = () => {
+    console.log("CHANGE");
+    console.log(inputFileImageModalAddPost.files);
+  };
 }
 
 function addEventClickInputPost() {
-  inputPost.addEventListener("click", function showModalAddPost() {
-    toggleShowAndCloseModalAddPost();
-  });
+  inputPost.addEventListener("click", toggleShowAndCloseModalAddPost);
 }
 
 function toggleShowAndCloseModalAddPost() {
   if (modalAddPost.classList.contains(classVisibilityHidden)) {
     modalAddPost.classList.remove(classVisibilityHidden);
   } else modalAddPost.classList.add(classVisibilityHidden);
+  document.querySelector(".warning").style.display = "none";
+}
+
+function toggleLocationModalAddPost() {
+  spanLocationAddPost.style.display =
+    spanLocationAddPost.style.display == "none" ? "flex" : "none";
+}
+
+function addEventClickCloseModalAddPost() {
+  buttonCloseModalAddPost.addEventListener(
+    "click",
+    toggleShowAndCloseModalAddPost
+  );
+}
+
+function addEventClickPublishModalAddPost() {
+  buttonPublishPost.addEventListener("click", publishNewPost);
 }
 
 function getButtonsPosts() {
@@ -81,9 +129,7 @@ function addEventDeletePostToButtonModal() {
 
 function addEventCloseModalToButtonsCloses() {
   closeModalDeletePostButttons.forEach((_tag) => {
-    _tag.addEventListener("click", function eventDissaperModal() {
-      dissaperModal();
-    });
+    _tag.addEventListener("click", dissaperModal);
   });
 }
 
@@ -102,8 +148,8 @@ function init() {
   getButtonsPosts();
   assingActionsToPostsButtons();
   addEventDeletePostToButtonModal();
-  getElementModalAddPost();
-  addEventClickInputPost();
+  getElementsModalAddPost();
+  addEventsElementModalAddPost();
 }
 
 init();

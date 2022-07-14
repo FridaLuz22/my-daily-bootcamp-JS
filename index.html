@@ -609,7 +609,7 @@
     <div class="modal-input visibility-hidden" id="modal-add-post">
       <div class="modal-container-input">
         <div class="buttom-input-x">
-          <span class="close-input" onclick="toggleShowAndCloseModalAddPost()">&times;</span>
+          <span class="close-input"">&times;</span>
         </div>
         <div class="content-modal-input">
           <div class="cont-input">
@@ -630,9 +630,10 @@
             <!-- end alert warning -->
             <div class="buttoms-span">
               <div class="span-img-location">
-                <button class="span-upload-image">
-                  <img src="./assets/modal/upload-modal.png" alt="location">                  
-                </button>
+                <div class="span-upload-image">
+                  <input type="file" id="upload-files" accept="image/*" multiple>
+                  <label for="upload-files"><img src="./assets/modal/upload-modal.png" alt="location"></label>                  
+                </div>
                 <button class="span-location">
                   <img src="./assets/modal/location-modal.png" alt="upload-image">
                 </button>
